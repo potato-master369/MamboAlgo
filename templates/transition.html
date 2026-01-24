@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MamboAlgo</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    background: #34344d; 
+    margin: 0; height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+  }
+  main {
+    font-family: Arial, sans-serif;
+    background: #34344d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  .fah {
+    background: #313131;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 60%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-height: 60%;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  h1 {
+    text-align: center;
+    color: #ffffff;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  p {
+    text-align: center;
+    color: #ddd;
+  }
+  a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #364a8b;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  }
+  a.button:hover {
+    background: #164c7c;
+  }
+  input[type="text"],
+  input[type="file"] {
+    display: block;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #313942;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #164c7c;
+  }
+  nav {
+    align-self: flex-start;
+    width: 100%; 
+  }
+  .image-container {
+  width: 100%; /* take full width of parent */ 
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  max-width: 512px;
+  max-height: 512px;
+  position: relative;
+  overflow: visible;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* fill container width */
+  height: 100%;  /* fill container height */
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+
+.image-top {
+  opacity: 0;
+  filter: blur(5px); /* Start with a blur */
+}
+
+
+.image-container:hover .image-top {
+  opacity: 1; 
+  filter: blur(0); 
+}
+
+</style>
+</head>
+<body>
+  <h1>Premier brainrot technology</h1>
+  <nav style="background:#3f3f63; display:flex; justify-content:center;">
+    <ul style="list-style:none; margin:0; padding:0; display:flex;">
+      <li style="position:relative;">
+        <a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">MamboAlgo v1.0.0</a>
+      </li>
+      <li style="position:relative;">
+        <a href="https://github.com/potato-master369" style="display:block; padding:14px 20px; color:white; text-decoration:none;">GitHub: potato-master369</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="fah">
+      <h2>Result:</h2>
+      <p>Your Image has been saved in static/{{ final_result }}. Hover over the image to see the original!</p>
+      <a href="/submit" class="button">Try another one?</a>
+      <br>
+        <div class="image-container">
+          <img class="image-bottom" src="{{ url_for('static', filename=final_result) }}" alt="Image 1">
+          <img class="image-top" src="{{ url_for('static', filename=original_file) }}" alt="Image 2">
+        </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
