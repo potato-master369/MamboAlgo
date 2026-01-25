@@ -3,6 +3,7 @@ import base64
 import threading
 from flask import Flask, request, render_template, redirect, url_for
 import webview
+import time
 
 app = Flask(__name__)
 
@@ -33,6 +34,7 @@ def about():
 
 @app.route('/success', methods=['GET'])
 def success():
+    time.sleep(0.1)
     with open("mambo.jpg", "rb") as f: encoded = base64.b64encode(f.read()).decode("utf-8")
     return render_template("transition.html", original_file="original.png", final_result = f"out_{a}.png")
 

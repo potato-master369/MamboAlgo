@@ -124,20 +124,20 @@
         <a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">MamboAlgo v1.0.0</a>
       </li>
       <li style="position:relative;">
-        <a href="https://github.com/potato-master369" style="display:block; padding:14px 20px; color:white; text-decoration:none;">GitHub: potato-master369</a>
+        <a href="https://github.com/potato-master369" style="display:block; padding:14px 20px; color:white; text-decoration:none;">GitHub: potato-master369  (WARNING: you won't be able to go back)</a>
       </li>
     </ul>
   </nav>
   <main>
     <div class="fah">
       <h2>Result:</h2>
-      <p>Your Image has been saved in static/{{ final_result }}. Hover over the image to see the original!</p>
+      <p>Your Image has been saved in static/{{ final_result }}. Use the video controls to play the animation! If the animation isn't working, move it back to 0:00 and try again.</p>
       <a href="/submit" class="button">Try another one?</a>
       <br>
-        <div class="image-container">
-          <img class="image-bottom" src="{{ url_for('static', filename=final_result) }}" alt="Image 1">
-          <img class="image-top" src="{{ url_for('static', filename=original_file) }}" alt="Image 2">
-        </div>
+      <video width="512" height="512" controls>
+        <source src="{{ url_for('static', filename='anim.mp4')}}" type="video/mp4">
+      Your browser does not support the video tag.
+      </video> 
     </div>
   </main>
   
