@@ -1,2 +1,5 @@
 __pycache__
 __pycache__/*
+animation/*
+!animation/.gitkeep
+input.jpg
