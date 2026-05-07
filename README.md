@@ -13,8 +13,12 @@ Yes.
 * pywebview
 * PIL
 * flask
+* numpy
 
 (for the webUI! For `machitan.py` only, only PIL is needed)
+
+## Changing the Image
+Set mambo.jpg to a 512x512 JPEG image.
 
 No installation is required.
 Just download the source code as zip, unzip and
